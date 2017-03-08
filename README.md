@@ -1,4 +1,4 @@
-# Weather Services
+# Weather Services App
 ![alt tag](http://s.quickmeme.com/img/ef/ef9a9097ae8526fb31cce22351e3041169045048f67ba096b6030ff3c4def4db.jpg)
 
 ### Consuming Web Services via AngularJS ### 
@@ -21,4 +21,3 @@ The trick to several of these (2 and 3 above) is to use Angular's $http service 
 2. Weather Underground API
 3. DarkSky API
 
-# weatherservicesapp
