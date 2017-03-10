@@ -1,0 +1,66 @@
+<div class="panel panel-default">
+    <div class="panel-body">
+        <table class="table table-condensed">
+            <tr align="right">
+                <td>
+                    <span class="label label-primary">Time:</span>
+                </td>
+                <td>
+                    <span class="badge">Last Updated on {{wsc.observation_time | date : 'medium'}}</span>
+                </td>
+            </tr>
+            <tr align="right">
+                <td>
+                    <span class="label label-primary">Coordinates:</span>
+                </td>
+                <td>
+                    <span class="badge">lat: {{wsc.selected_lat}}</br> lon: {{wsc.selected_lon}}</span>
+                </td>
+            </tr>
+            <tr align="right">
+                <td>
+                    <span class="label label-primary">Temperature:</span>
+                </td>
+                <td>
+                    <span class="badge">{{wsc.temperature}} F ({{wsc.temperature | fahrenheitToCelsius}} C)</span>
+                </td>
+            </tr>
+            <tr align="right">
+                <td>
+                    <span class="label label-primary">Dewpoint:</span>
+                </td>
+                <td>
+                    <span class="badge">{{wsc.dewpoint}}</span>
+                </td>
+            </tr>
+            <tr align="right">
+                <td>
+                    <span class="label label-primary">Wind Bearing:</span>
+                </td>
+                <td>
+                    <span class="badge">{{wsc.windBearing}}</span>
+                </td>
+            </tr>
+            <tr align="right">
+                <td>
+                    <span class="label label-primary">Wind Speed:</span>
+                </td>
+                <td>
+                    <span class="badge">{{wsc.windSpeed}} Mph </span>
+                </td>
+            </tr>
+            <tr align="right">
+                <td>
+                    <span class="label label-primary">Summary:</span>
+                </td>
+                <td>
+                    <img src="{{wsc.icons()}}" style="width:64px;height:64px;"/></br>
+                    
+                    <span class="skycons">{{wsc.summary}}</span>
+                </td>
+            </tr>
+            
+        </table>
+    </div>
+</div>
+            
