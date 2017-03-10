@@ -14,25 +14,43 @@ angular.module("ForecastApp", [])
             //App name    
             wsc.app_name = "Weather App";
 
-            wsc.cities = [{
-                name: "Amarillo",
-                url_name: "Amarillo",
+            wsc.cities = [
+            {
+                name: "Lubbock",
+                url_name: "Lubbock",
                 state: "TX",
                 lat: 0,
                 lon: 0
-            }, {
-                name: "Anchorage",
-                url_name: "Anchorage",
+            },
+            {
+                name: "Alaska",
+                url_name: "Alaska",
                 state: "AK",
                 lat: 0,
                 lon: 0
-            }, {
-                name: "Denver",
-                url_name: "Denver",
-                state: "CO",
+            }, 
+            {
+                name: "Ottawa",
+                url_name: "Ottawa",
+                state: "CA",
                 lat: 0,
                 lon: 0
-            }];
+            },
+            {
+                name: "New York",
+                url_name: "New York",
+                state: "NY",
+                lat: 0,
+                lon: 0
+            },
+            {
+                name: "London",
+                url_name: "London",
+                state: "UK",
+                lat: 0,
+                lon: 0
+            }
+            ];
 
             wsc.getLatLonForSelected = function() {
                 GoogleGeolocationService.geoLocate(wsc.selected_city)
@@ -151,72 +169,11 @@ angular.module("ForecastApp", [])
         return function(f){
             var c;
             
-            c = Math.round((f - 32) * .5556);
+            c = Math.round((f - 32) * 5 / 9);
             
             return c;
         };
         
-        
-    })
-    .filter('direction', function(){
-        return function(windspeed){
-            var dir;
-            
-            switch(windspeed){
-                case windspeed >= 348.75:
-                    dir = "N";
-                    break;
-                case windspeed > 11.25 && windspeed <= 33.75:
-                    dir = "NNE";
-                    break;
-                case windspeed > 33.75 && windspeed <= 56.25:
-                    dir = "NE";
-                    break;
-                case windspeed > 56.25 && windspeed <= 78.75:
-                    dir = "ENE";
-                    break;
-                case windspeed > 78.75 && windspeed <= 101.25:
-                    dir = "E";
-                    break;
-                case windspeed > 101.25 && windspeed <= 123.75:
-                    dir = "ESE";
-                    break;
-                case windspeed > 123.75 && windspeed <= 146.25:
-                    dir = "SE";
-                    break;
-                case windspeed > 146.24 && windspeed <= 168.75:
-                    dir = "SSE";
-                    break;
-                case windspeed > 168.75 && windspeed <= 191.25:
-                    dir = "S";
-                    break;
-                case windspeed > 191.25 && windspeed <= 213.75:
-                    dir = "SSW";
-                    break;
-                case windspeed > 213.75 && windspeed <= 236.25:
-                    dir = "SW";
-                    break;
-                case windspeed > 236.25 && windspeed <= 258.75:
-                    dir = "WSW";
-                    break;
-                case windspeed > 258.75 && windspeed <= 281.25:
-                    dir = "W";
-                    break;
-                case windspeed > 281.25 && windspeed <= 303.25:
-                    dir = "WNW";
-                    break;
-                case windspeed > 303.25 && windspeed <= 326.75:
-                    dir = "NW";
-                    break;
-                case windspeed > 326.25 && windspeed < 348.75:
-                    dir = "NNW";
-                    break;
-                
-
-            }
-            
-            return dir;
-        };
         
     })
     .directive('myConditionsSpecial', ['$sce', function($sce) {

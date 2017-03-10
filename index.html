@@ -11,7 +11,7 @@
 		<div class="container">
 		<div ng-controller="WeatherServiceController as wsc">
 			<select ng-model="wsc.selected_city" ng-change="wsc.list_selected()" ng-options="s.name for s in wsc.cities"></select>
-            <p><img src="{{wsc.google_static_maps_url}}" /></p> 
+            <p><img src="{{wsc.google_static_maps_url}}" align="center" /></p> 
             <my-conditions-special></my-conditions-special>
             
 		</div>
